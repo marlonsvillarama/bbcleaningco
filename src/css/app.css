@@ -1,0 +1,50 @@
+@import url('./root.css');
+@import url('./page.css');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--font-size);
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--color-bg);
+    /* background: linear-gradient(var(--color-border-lite), var(--color-border)); */
+    /* border: 0; */
+    border: 1px solid var(--color-border);
+    /* border-top: 1px solid white; */
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: var(--fs-2xs);
+    padding: 0.5rem 1rem;
+    transition: all 150ms ease-in-out;
+}
+/* button:hover {
+    background: linear-gradient(var(--color-border), var(--color-border));
+} */
+
+input[type=text] {
+    /* background-color: var(--color-bg); */
+    /* background: linear-gradient(var(--color-border-lite), var(--color-border)); */
+    /* border: 0; */
+    border: 1px solid var(--color-border);
+    /* border-top: 1px solid white; */
+    border-radius: var(--radius);
+    /* cursor: pointer; */
+    font-size: var(--fs-2xs);
+    padding: 0.5rem 1rem;
+    /* transition: all 150ms ease-in-out; */
+    width: 100%;
+}
