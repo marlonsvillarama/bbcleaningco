@@ -29,7 +29,7 @@
         z-index: 999;
     }
     .content {
-        height: 1000px;
+        /* height: 1000px; */
         margin-left: 18rem;
     }
 </style>

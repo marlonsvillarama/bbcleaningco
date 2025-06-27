@@ -1,5 +1,6 @@
 <script>
     import HeaderAction from "../../components/HeaderAction.svelte";
+    import DataTable from "../../components/DataTable.svelte";
 </script>
 
 <div class="page">
@@ -11,7 +12,7 @@
         </div>
     </div>
     <div class="page-contents">
-        contents
+        <DataTable />
     </div>
 </div>
 
