@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
+    --col: 10rem;
+
     --color-accent-dark: hsl(35, 96%, 47%);
     --color-accent: hsl(40, 100%, 63%);
 
@@ -16,7 +19,7 @@
     --color-text-muted: hsl(0, 0%, 30%); /* oklch(42%, 0%, 89.876%) */
     --color-text-lite: hsl(0, 0%, 50%); /* oklch(42%, 0%, 89.876%) */
 
-    --font: 'Instrument Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --font-size: 16px;
 
     --fs-4xs: 0.625rem;
@@ -34,4 +37,11 @@
     --radius: 0.5rem;
 
     --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+
+    --width-xxl: 80rem;
+    --width-xl: 64rem;
+    --width-lg: 60rem;
+    --width-md: 48rem;
+    --width-sm: 40rem;
+    --width-xs: 24rem;
 }

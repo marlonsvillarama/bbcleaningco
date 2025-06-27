@@ -43,6 +43,10 @@
         font-weight: 500;
         gap: 1rem;
         padding: 0.5rem 1rem;
+        transition: all 150ms ease-in-out;
+    }
+    a:not(:last-of-type) {
+        margin-bottom: 0.125rem;
     }
     a.active {
         background-color: var(--color-accent);
@@ -56,6 +60,6 @@
         height: 1.125rem;
     }
     span {
-        font-size: var(--fs-2xs);
+        font-size: clamp(var(--fs-2xs), 3vw,var(--fs-xs));
     }
 </style>
