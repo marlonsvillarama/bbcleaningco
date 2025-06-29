@@ -168,12 +168,18 @@
         flex: 0 0 auto;
     }
     .content {
+        /* border: 0px solid red; */
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
         flex: 1 1 auto;
         overflow-y: auto;
     }
+    .content > .row:last-child {
+        border-bottom: 0;
+    }
     .header, .cell {
         color: var(--color-text-muted);
-        font-size: var(--fs-xs);
+        font-size: var(--fs-3xs);
         letter-spacing: 0.25px;
         padding: 0.5rem 1rem;
         text-align: left;
