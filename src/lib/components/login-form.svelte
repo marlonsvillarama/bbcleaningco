@@ -22,7 +22,7 @@
 	<div class="grid gap-6">
 		<div class="grid gap-3">
 			<Label for="email-{id}">Email</Label>
-			<Input id="email-{id}" type="email" placeholder="m@example.com" required />
+			<Input id="email-{id}" type="email" placeholder="user@bbcleaningco.com" required />
 		</div>
 		<div class="grid gap-3">
 			<div class="flex items-center">
