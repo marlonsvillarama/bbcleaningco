@@ -18,7 +18,7 @@
 <Button variant="default" class="hover:cursor-pointer" onclick={clickButton}>Click me</Button>
 
 <Dialog.Root>
-    <Dialog.Trigger class={[ "cursor-pointer", buttonVariants({ variant: "ghost" }) ]}>Delete Profile</Dialog.Trigger>
+    <Dialog.Trigger class={ buttonVariants({ variant: "secondary" }) }>Delete Profile</Dialog.Trigger>
     <Dialog.Content>
         <Dialog.Header>
             <Dialog.Title>Are you sure?</Dialog.Title>
