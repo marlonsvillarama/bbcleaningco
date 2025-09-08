@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import AppHeader from '$lib/components/app-header.svelte';
+	import AppHeader from '$lib/components/global/app-header.svelte';
 	
 	let { children } = $props();
 </script>
@@ -12,6 +12,8 @@
 
 <AppHeader />
 
-<div class="mt-28">
-	{@render children?.()}
+<div class="flex flex-1 flex-row gap-4 mt-28">
+    <div class="flex flex-col gap-4 px-8 w-full">
+		{@render children?.()}
+	</div>
 </div>

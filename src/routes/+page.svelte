@@ -9,15 +9,15 @@
     };
 </script>
 
-<ul>
+<!-- <ul>
     {#each data.instruments as instrument}
         <li>{instrument.name}</li>
     {/each}
 </ul>
 
-<Button variant="default" class="hover:cursor-pointer" onclick={clickButton}>Click me</Button>
+<Button variant="default" class="hover:cursor-pointer" onclick={clickButton}>Click me</Button> -->
 
-<Dialog.Root>
+<!-- <Dialog.Root>
     <Dialog.Trigger class={ buttonVariants({ variant: "secondary" }) }>Delete Profile</Dialog.Trigger>
     <Dialog.Content>
         <Dialog.Header>
@@ -29,4 +29,5 @@
             <Button class="cursor-pointer" variant="ghost">Cancel</Button>
         </Dialog.Footer>
     </Dialog.Content>
-</Dialog.Root>
+</Dialog.Root> -->
+
