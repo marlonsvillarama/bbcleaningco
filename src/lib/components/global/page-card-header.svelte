@@ -1,16 +1,12 @@
 <script>
-    let { children } = $props();
+    let {
+        cls,
+        children
+    } = $props();
 </script>
 
-<div class="page-header w-full grid grid-cols-3 items-center px-4 py-2">
+<div class="page-header w-full items-center px-5 py-3 {cls}">
     {@render children()}
 </div>
 
-<style>
-    .page-header > *:first-child {
-        justify-content: left;
-    }
-    .page-header > *:last-child {
-        justify-content: right;
-    }
-</style>
+<style></style>

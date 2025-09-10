@@ -10,9 +10,9 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<AppHeader />
+<!-- <AppHeader /> -->
 
-<div class="flex flex-1 flex-row gap-4 mt-28">
+<div class="flex flex-1 flex-row gap-4 min-w-6xl">
     <div class="flex flex-col gap-4 px-8 w-full">
 		{@render children?.()}
 	</div>

@@ -1,8 +1,8 @@
 <script>
-    let { children } = $props();
+    let { cls, children } = $props();
 </script>
 
-<div class="page-card rounded-lg bg-white w-full">
+<div class="page-card rounded-lg bg-white w-full shadow {cls}">
     {@render children()}
 </div>
 

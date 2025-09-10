@@ -9,12 +9,13 @@
     };
 </script>
 
-<!-- <ul>
+<ul>
     {#each data.instruments as instrument}
         <li>{instrument.name}</li>
     {/each}
 </ul>
 
+<!-- 
 <Button variant="default" class="hover:cursor-pointer" onclick={clickButton}>Click me</Button> -->
 
 <!-- <Dialog.Root>
