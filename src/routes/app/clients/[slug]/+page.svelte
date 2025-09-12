@@ -1,9 +1,12 @@
 <script>
     import ArrowLeft from '@lucide/svelte/icons/arrow-left';
     import Pencil from '@lucide/svelte/icons/pencil';
+    import Save from '@lucide/svelte/icons/save';
     import Tag from '@lucide/svelte/icons/tag';
     import UserRound from '@lucide/svelte/icons/user-round';
 
+    import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
+    import { buttonVariants } from '$lib/components/ui/button/index.js';
     import Badge from "$lib/components/ui/badge/badge.svelte";
     import Button from "$lib/components/ui/button/button.svelte";
 
@@ -19,6 +22,10 @@
     let { data } = $props();
     console.log('+page data', data);
 
+    const cancelEdit = () => {
+        // show alert dialog
+    };
+    const goToEdit = () => window.location.href = `/app/clients/${data.id}?edit`;
     const backToList = () => window.location.href = '/app/clients';
 </script>
 
@@ -32,21 +39,30 @@
             <Badge variant="secondary" class="px-2 py-1">{data.client_status.name}</Badge>
         </div>
         <div class="flex flex-row items-center gap-3">
-            <Button variant="default" size="sm" class="text-xs">
-                <Pencil /> Edit
-            </Button>
-            <Button variant="secondary" size="sm" class="text-xs">
-                <Tag /> New Quotation
-            </Button>
-            <Button variant="secondary" size="sm" class="text-xs" onclick={backToList}>
-                <ArrowLeft /> Back to list
-            </Button>
+            {#if data.edit === true}
+                <Button variant="default" size="sm" class="text-xs" onclick={goToEdit}>
+                    <Save /> Save
+                </Button>
+                <Button variant="secondary" size="sm" class="text-xs" onclick={cancelEdit}>
+                    Cancel
+                </Button>
+            {:else}
+                <Button variant="default" size="sm" class="text-xs" onclick={goToEdit}>
+                    <Pencil /> Edit
+                </Button>
+                <Button variant="secondary" size="sm" class="text-xs">
+                    <Tag /> New Quotation
+                </Button>
+                <Button variant="secondary" size="sm" class="text-xs" onclick={backToList}>
+                    <ArrowLeft /> Back to list
+                </Button>
+            {/if}
         </div>
     </PageCardHeader>
 
     <PageCardContent cls="flex flex-row">
         <PageCardContentColumn width="3/4">
-            <ClientPrimaryDetails />
+            <ClientPrimaryDetails {data} />
 
             <Card title="Notes">
                 content

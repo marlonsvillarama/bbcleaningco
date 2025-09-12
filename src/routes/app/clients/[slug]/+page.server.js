@@ -2,16 +2,20 @@ import { supabase } from "$lib/supabaseClient";
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ params }) {
+export async function load({ params, url }) {
     let slug = params.slug;
-    console.log('slug', slug);
+    console.log('+load slug', slug);
 
+	let urlParams = url.searchParams.has('edit');
+	console.log('+load urlParams', urlParams);
 	let { data } = await supabase.from("clients").select(`
 		*,
 		client_status (id, name)
 	`)
 	.eq('id', slug);
-	return data.length > 0 ? data[0] : {};
+	let obj = data.length > 0 ? data[0] : {};
+	obj.edit = url.searchParams.has('edit');
+	return obj;
 
 	// if (params.slug === 'hello-world') {
 	// 	return {

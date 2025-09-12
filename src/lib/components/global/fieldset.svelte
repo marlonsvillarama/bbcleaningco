@@ -8,6 +8,6 @@
 </script>
 
 <div class="flex flex-col gap-2 text-xs">
-    <Label>{label}</Label>
+    <Label class="font-semibold">{label}</Label>
     {@render children()}
 </div>
