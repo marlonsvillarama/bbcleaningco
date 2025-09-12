@@ -12,6 +12,6 @@
 
 <AppHeader />
 
-<div class="mt-28">
+<div class="mt-28 mb-10">
 	{@render children?.()}
 </div>

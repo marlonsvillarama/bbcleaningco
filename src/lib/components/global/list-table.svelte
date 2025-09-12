@@ -1,5 +1,12 @@
 <script>
+    import ListTablePaginator from "./list-table-paginator.svelte";
+
     let { data } = $props();
+    const SIZE = 3;
+    let page = $state(0);
+    let start = $derived(page * SIZE);
+    let end = $derived(start + SIZE);
+
     /* let data_2 = {
         columns: [
             { id: 'id', label: 'ID', width: 20 },
@@ -58,19 +65,34 @@
         {/each}
         </tr>
     </thead>
+
     <tbody>
         {#each data.rows as row, index}
-        <tr class="row {index % 2 > 0 ? 'bg-accent/10' : ''} hover:bg-accent/15 hover:shadow transition-all duration-200 ease-in-out">
-            {#each data.columns as col}
-                <td
-                    class="cell px-4 py-2 text-xs font-light {col.width ? `w-${col.width}` : ''} text-left align-top cursor-pointer"
-                    data-col-id="col-{col.id}">
-                    {row[col.id]}
-                </td>
+        <tr class="row {index % 2 > 0 ? 'bg-accent/10' : ''} hover:shadow transition-all duration-100 ease-in-out">
+            {#each data.columns as col, ci}
+                {#if ci === data.columns.length - 1}
+                    <td class="cell px-4 py-2 text-xs font-semibold text-right align-top flex flex-row gap-2">
+                        <a href={row.links.view} class="hover:underline">View</a> | <a href={row.links.edit} class="hover:underline">Edit</a>
+                    </td>
+                {:else}
+                    <td
+                        class="cell px-4 py-2 text-xs font-light {col.width ? `w-${col.width}` : ''} text-left align-top"
+                        data-col-id="col-{col.id}">
+                        {row[col.id]}
+                    </td>
+                {/if}
             {/each}
         </tr>
         {/each}
     </tbody>
+
+    <tfoot>
+        <tr>
+            <th colspan={data.columns.length}>
+                <ListTablePaginator count={data.rows.length} page={start} size={SIZE} />
+            </th>
+        </tr>
+    </tfoot>
 </table>
 
 <style>

@@ -44,6 +44,8 @@
 	},
 	"dependencies": {
 		"@supabase/supabase-js": "^2.56.0",
+		"lucide": "^0.542.0",
+		"lucide-svelte": "^0.543.0",
 		"shadcn-svelte": "^1.0.7"
 	}
 }

@@ -13,7 +13,11 @@ export async function load() {
             name: `${d.first_name} ${d.last_name}`,
             address: `${d.address_1}${d.address_2 ? `\n${d.address_2}` : ''}${d.barangay ? `\nBarangay ${d.barangay}` : ''}\n${d.city}${d.province ? `, ${d.province}` : ''}`,
             status: d.client_status.name,
-            active: d.active === true ? 'Yes' : 'No'
+            active: d.active === true ? 'Yes' : 'No',
+            links: {
+                edit: `/app/clients/${d.id}/edit`,
+                view: `/app/clients/${d.id}`
+            }
         };
     });
     console.log('load data', data);
@@ -26,7 +30,7 @@ export async function load() {
             { id: 'phone', label: 'Phone', width: 28 },
             { id: 'status', label: 'Status', width: 24 },
             { id: 'active', label: 'Active', width: 20 },
-            { id: 'actions', label: '' },
+            { id: 'actions', label: '', width: 24 },
         ],
         rows: data ?? [],
     };
