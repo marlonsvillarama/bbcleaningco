@@ -18,12 +18,14 @@
     import PageCardContentColumn from '$lib/components/global/page-card-content-column.svelte';
 
     import ClientPrimaryDetails from '$lib/components/cards/client-primary-details.svelte';
+    import ClientNotes from '$lib/components/cards/client-notes.svelte';
+    import ClientServiceHistory from '$lib/components/cards/client-service-history.svelte';
 
     let { data } = $props();
     console.log('+page data', data);
 
     const cancelEdit = () => {
-        // show alert dialog
+        window.location.href = '/app/clients';
     };
     const goToEdit = () => window.location.href = `/app/clients/${data.id}?edit`;
     const backToList = () => window.location.href = '/app/clients';
@@ -64,12 +66,10 @@
         <PageCardContentColumn width="3/4">
             <ClientPrimaryDetails {data} />
 
-            <Card title="Notes">
-                content
-            </Card>
-            <Card title="Service History">
-                content
-            </Card>
+            <ClientNotes {data} />
+
+            <ClientServiceHistory {data} />
+            
             <Card title="Audit Trail">
                 content
             </Card>
@@ -80,8 +80,9 @@
                 content
             </Card>
         </PageCardContentColumn>
-        <PageCardContentColumn width="1/4">
-            <Card title="Sales">
+
+        <PageCardContentColumn cls="flex-1">
+            <Card title="Sales" cls="w-full">
                 content
             </Card>
             <Card title="Financials">

@@ -2,6 +2,7 @@
     let {
         children,
         cls = '',
+        padded = true,
         title
     } = $props();
 </script>
@@ -10,7 +11,7 @@
     <div class="px-4 py-2 bg-accent/50 rounded-t-lg">
         <span class="font-semibold text-sm">{title}</span>
     </div>
-    <div class="px-8 py-6 gap-8 items-top {cls}">
+    <div class="gap-8 items-top {cls} {padded === true ? 'px-8 py-6' : ''}">
         {@render children()}
     </div>
 </div>

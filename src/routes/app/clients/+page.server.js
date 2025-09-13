@@ -15,7 +15,7 @@ export async function load() {
             status: d.client_status.name,
             active: d.active === true ? 'Yes' : 'No',
             links: {
-                edit: `/app/clients/${d.id}/edit`,
+                edit: `/app/clients/${d.id}?edit`,
                 view: `/app/clients/${d.id}`
             }
         };
